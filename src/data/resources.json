@@ -1,0 +1,18 @@
+[
+  {
+    "id": "financial-planning-guide",
+    "title": "10-Step Financial Planning Pocket Guide",
+    "description": "A comprehensive 10-step guide to mastering your financial planning and ensuring long-term stability. Ideal for foundational financial clarity.",
+    "type": "XLSX",
+    "category": "Planning",
+    "fileUrl": "/downloads/10-Step-Financial-Planning-Pocket-Guide.xlsx"
+  },
+  {
+    "id": "saas-financial-model",
+    "title": "SaaS Financial Model Template",
+    "description": "Specialized model for SaaS businesses including MRR, churn, and LTV/CAC metrics. Designed for strategic growth and scaling.",
+    "type": "XLSX",
+    "category": "SaaS",
+    "fileUrl": "/downloads/SaaS-Financial-Model-Template.xlsx"
+  }
+]

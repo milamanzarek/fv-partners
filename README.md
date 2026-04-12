@@ -1,20 +1,35 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# FV Partners
 
-# Run and deploy your AI Studio app
+Official web presence and client portal for FV Partners.
 
-This contains everything you need to run your app locally.
+## Overview
+FV Partners provides uncompromising financial architecture and strategic advisory for enterprise clients. This repository contains the source code for the firm's public-facing digital terminal and client contact interface.
 
-View your app in AI Studio: https://ai.studio/apps/6a4e8664-54a5-4b12-af21-bf677020b79b
+## Tech Stack
+- Frontend: React (Vite)
+- Styling: Tailwind CSS
+- Animation: Motion (Framer Motion)
+- Icons: Lucide React
 
-## Run Locally
+## Development
 
-**Prerequisites:**  Node.js
+Install dependencies:
+```bash
+npm install
+```
 
+Start the development server:
+```bash
+npm run dev
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Build for production:
+```bash
+npm run build
+```
+
+## Deployment
+This project is configured for continuous deployment via Netlify.
+
+---
+*Confidential and Proprietary. All rights reserved. FV Partners.*

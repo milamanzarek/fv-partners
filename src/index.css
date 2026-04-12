@@ -1,87 +1,93 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #2C4A7C;
-  --color-secondary: #3A6B47;
-  --color-background: #1C2B3A;
-  --color-surface: #2C4A7C;
-  --color-cream: #F5F0E8;
-  --color-text: #F5F0E8;
-  --color-muted: #A3BEB1;
-  --color-accent: #C4A35A;
+  --color-tertiary: #2D476C;
+  --color-on-tertiary-fixed: #001c3b;
+  --color-on-tertiary: #ffffff;
+  --color-surface-container-highest: #e4e2e4;
+  --color-primary-fixed-dim: #6ddf56;
+  --color-inverse-surface: #303032;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #023900;
+  --color-surface-container-low: #f5f3f5;
+  --color-on-error: #ffffff;
+  --color-secondary-fixed-dim: #aec8f4;
+  --color-on-tertiary-fixed-variant: #2D476C;
+  --color-outline: #74777f;
+  --color-primary: #2CA01C;
+  --color-tertiary-fixed: #d5e3ff;
+  --color-secondary-container: #b9d3ff;
+  --color-primary-fixed: #89fc6f;
+  --color-on-primary-fixed-variant: #055300;
+  --color-surface-container-high: #e9e7ea;
+  --color-error-container: #ffdad6;
+  --color-inverse-primary: #6ddf56;
+  --color-secondary: #2D476C;
+  --color-on-error-container: #93000a;
+  --color-on-tertiary-container: #2D476C;
+  --color-inverse-on-surface: #f2f0f2;
+  --color-error: #ba1a1a;
+  --color-background: #fbf9fb;
+  --color-on-background: #1b1c1d;
+  --color-secondary-fixed: #d5e3ff;
+  --color-surface-bright: #fbf9fb;
+  --color-on-secondary-fixed: #001c3b;
+  --color-on-primary-fixed: #012200;
+  --color-surface-container-lowest: #ffffff;
+  --color-tertiary-fixed-dim: #aec8f4;
+  --color-surface-variant: #e4e2e4;
+  --color-surface-tint: #2CA01C;
+  --color-outline-variant: #c4c6cf;
+  --color-tertiary-container: #d5e3ff;
+  --color-surface: #fbf9fb;
+  --color-on-surface: #1b1c1d;
+  --color-on-secondary-container: #2D476C;
+  --color-surface-dim: #dbd9dc;
 
-  --font-heading: "Cormorant Garamond", serif;
+  --font-headline: "Inter", sans-serif;
   --font-body: "Inter", sans-serif;
-  --font-ui: "Inter", sans-serif;
+  --font-label: "Inter", sans-serif;
+  --font-sans: "Inter", sans-serif;
 }
 
 body {
   background-color: var(--color-background);
-  color: var(--color-text);
+  color: var(--color-on-background);
   font-family: var(--font-body);
+  letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  font-weight: 600;
+  font-family: var(--font-headline);
 }
 
-.font-ui {
-  font-family: var(--font-ui);
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-/* Tailwind v4 Custom Utilities */
-@utility btn-primary {
-  background-color: #0F7A4D;
-  color: white;
-  font-family: var(--font-ui);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 500;
-  padding: 0.75rem 1.5rem;
-  border: 1px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
-  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+.material-icons {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
   white-space: nowrap;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-
-  &:hover {
-    background-color: var(--color-accent);
-    color: #041527;
-    border-color: var(--color-accent);
-  }
+  direction: ltr;
 }
 
-@utility btn-primary-lg {
-  background-color: #0F7A4D;
-  color: white;
-  font-family: var(--font-ui);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 500;
-  padding: 1.25rem 2.5rem;
-  border: 1px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
-  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  white-space: nowrap;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-
-  &:hover {
-    background-color: var(--color-accent);
-    color: #041527;
-    border-color: var(--color-accent);
-  }
+/* Base structural helpers enforcing no-line rule */
+.surface-tier-1 {
+  background-color: var(--color-surface);
 }
+
+.surface-tier-2 {
+  background-color: var(--color-surface-container-low);
+}
+
+.surface-tier-3 {
+  background-color: var(--color-surface-container-lowest);
+}
+

@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import logoUrl from '../../assets/fv-partners-logo.svg';
+import logoUrl from '../../assets/logo.png';
 
 export const NewLogo = ({ className = "w-12 h-12" }: { className?: string }) => {
   return (

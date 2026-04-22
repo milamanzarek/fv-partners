@@ -67,12 +67,12 @@ export const Home = () => {
       </section>
 
       {/* Value Props Section */}
-      <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="text-center mb-16 max-w-3xl mx-auto">
-          <h2 className="font-headline text-3xl md:text-5xl font-bold text-on-surface mb-6 leading-tight text-balance">
+      <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <div className="text-center mb-20 max-w-4xl mx-auto flex flex-col items-center">
+          <h2 className="font-headline text-3xl md:text-4xl font-semibold text-[var(--color-on-surface)] mb-8 leading-snug tracking-tight text-pretty max-w-3xl">
             {t('home.s2.title')}
           </h2>
-          <p className="font-body text-xl text-outline leading-relaxed">
+          <p className="font-body text-xl md:text-2xl text-[var(--color-outline)] leading-relaxed font-medium max-w-2xl text-pretty">
             {t('home.s2.desc')}
           </p>
         </div>

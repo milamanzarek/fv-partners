@@ -2,33 +2,47 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Phone, ArrowRight } from 'lucide-react';
 import { submitContactForm } from '../../services/api';
+import { useI18n } from '../../context/I18nContext';
 
 interface FormErrors {
   name?: string;
   email?: string;
+  phone?: string;
+  company?: string;
+  city?: string;
+  state?: string;
   message?: string;
 }
 
 export const ContactForm = () => {
   const navigate = useNavigate();
+  const { t } = useI18n();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
+    company: '',
+    city: '',
+    state: '',
     message: '',
   });
+  
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{ success: boolean; message: string } | null>(null);
 
   const validate = (): boolean => {
     const newErrors: FormErrors = {};
-    if (!formData.name.trim()) newErrors.name = 'Name is required';
+    if (!formData.name.trim()) newErrors.name = 'Required';
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = 'Required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Invalid email address';
+      newErrors.email = 'Invalid email';
     }
-    if (!formData.message.trim()) newErrors.message = 'Message is required';
+    if (!formData.phone.trim()) newErrors.phone = 'Required';
+    if (!formData.company.trim()) newErrors.company = 'Required';
+    if (!formData.message.trim()) newErrors.message = 'Required';
     
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -61,49 +75,95 @@ export const ContactForm = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label htmlFor="name" className={`block font-label text-[10px] uppercase tracking-[0.2em] font-bold mb-2 ${errors.name ? 'text-red-500' : 'text-outline'}`}>
-            {errors.name || 'Full Name'}
+            {errors.name || t('Full name')}
           </label>
           <input
             type="text"
             id="name"
-            data-testid="name-input"
             value={formData.name}
             onChange={handleChange}
-            placeholder="Jane Doe"
             disabled={isSubmitting}
-            className={`w-full bg-surface-tier-2 px-5 py-4 text-on-surface font-body text-base outline-none focus:ring-0 transition-colors placeholder:text-outline/50 shadow-inner ${errors.name ? 'ring-1 ring-red-500' : ''}`}
+            className={`w-full bg-surface-tier-2 px-5 py-4 text-on-surface font-body text-base outline-none focus:ring-0 transition-colors placeholder:text-outline/50 shadow-inner border border-surface-variant ${errors.name ? 'border-red-500' : ''}`}
           />
         </div>
         <div>
           <label htmlFor="email" className={`block font-label text-[10px] uppercase tracking-[0.2em] font-bold mb-2 ${errors.email ? 'text-red-500' : 'text-outline'}`}>
-            {errors.email || 'Professional Email'}
+            {errors.email || t('Email')}
           </label>
           <input
             type="email"
             id="email"
-            data-testid="email-input"
             value={formData.email}
             onChange={handleChange}
-            placeholder="jane@example.com"
             disabled={isSubmitting}
-            className={`w-full bg-surface-tier-2 px-5 py-4 text-on-surface font-body text-base outline-none focus:ring-0 transition-colors placeholder:text-outline/50 shadow-inner ${errors.email ? 'ring-1 ring-red-500' : ''}`}
+            className={`w-full bg-surface-tier-2 px-5 py-4 text-on-surface font-body text-base outline-none focus:ring-0 transition-colors placeholder:text-outline/50 shadow-inner border border-surface-variant ${errors.email ? 'border-red-500' : ''}`}
+          />
+        </div>
+        <div>
+          <label htmlFor="phone" className={`block font-label text-[10px] uppercase tracking-[0.2em] font-bold mb-2 ${errors.phone ? 'text-red-500' : 'text-outline'}`}>
+            {errors.phone || t('Phone Number')}
+          </label>
+          <input
+            type="text"
+            id="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            disabled={isSubmitting}
+            className={`w-full bg-surface-tier-2 px-5 py-4 text-on-surface font-body text-base outline-none focus:ring-0 transition-colors placeholder:text-outline/50 shadow-inner border border-surface-variant ${errors.phone ? 'border-red-500' : ''}`}
+          />
+        </div>
+        <div>
+          <label htmlFor="company" className={`block font-label text-[10px] uppercase tracking-[0.2em] font-bold mb-2 ${errors.company ? 'text-red-500' : 'text-outline'}`}>
+            {errors.company || t('Company name')}
+          </label>
+          <input
+            type="text"
+            id="company"
+            value={formData.company}
+            onChange={handleChange}
+            disabled={isSubmitting}
+            className={`w-full bg-surface-tier-2 px-5 py-4 text-on-surface font-body text-base outline-none focus:ring-0 transition-colors placeholder:text-outline/50 shadow-inner border border-surface-variant ${errors.company ? 'border-red-500' : ''}`}
+          />
+        </div>
+        <div>
+          <label htmlFor="city" className={`block font-label text-[10px] uppercase tracking-[0.2em] font-bold mb-2 ${errors.city ? 'text-red-500' : 'text-outline'}`}>
+            {errors.city || t('City')}
+          </label>
+          <input
+            type="text"
+            id="city"
+            value={formData.city}
+            onChange={handleChange}
+            disabled={isSubmitting}
+            className={`w-full bg-surface-tier-2 px-5 py-4 text-on-surface font-body text-base outline-none focus:ring-0 transition-colors placeholder:text-outline/50 shadow-inner border border-surface-variant ${errors.city ? 'border-red-500' : ''}`}
+          />
+        </div>
+        <div>
+          <label htmlFor="state" className={`block font-label text-[10px] uppercase tracking-[0.2em] font-bold mb-2 ${errors.state ? 'text-red-500' : 'text-outline'}`}>
+            {errors.state || t('State')}
+          </label>
+          <input
+            type="text"
+            id="state"
+            value={formData.state}
+            onChange={handleChange}
+            disabled={isSubmitting}
+            className={`w-full bg-surface-tier-2 px-5 py-4 text-on-surface font-body text-base outline-none focus:ring-0 transition-colors placeholder:text-outline/50 shadow-inner border border-surface-variant ${errors.state ? 'border-red-500' : ''}`}
           />
         </div>
       </div>
       
       <div>
         <label htmlFor="message" className={`block font-label text-[10px] uppercase tracking-[0.2em] font-bold mb-2 ${errors.message ? 'text-red-500' : 'text-outline'}`}>
-          {errors.message || 'Nature of Inquiry'}
+          {errors.message || t('Note Your Specific Needs Here')}
         </label>
         <textarea
           id="message"
-          data-testid="message-input"
           rows={4}
           value={formData.message}
           onChange={handleChange}
-          placeholder="How can we assist you?"
           disabled={isSubmitting}
-          className={`w-full bg-surface-tier-2 px-5 py-4 text-on-surface font-body text-base outline-none focus:ring-0 transition-colors placeholder:text-outline/50 resize-y shadow-inner ${errors.message ? 'ring-1 ring-red-500' : ''}`}
+          className={`w-full bg-surface-tier-2 px-5 py-4 text-on-surface font-body text-base outline-none focus:ring-0 transition-colors placeholder:text-outline/50 resize-y shadow-inner border border-surface-variant ${errors.message ? 'border-red-500' : ''}`}
         />
       </div>
       
@@ -119,15 +179,15 @@ export const ContactForm = () => {
           disabled={isSubmitting}
           className="flex-1 bg-tertiary text-on-tertiary font-label text-[13px] uppercase tracking-[0.1em] font-semibold py-5 hover:bg-primary hover:text-on-primary transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         >
-          {isSubmitting ? 'Processing...' : 'Submit Inquiry'}
+          {isSubmitting ? t('Processing...') : t('Submit Inquiry')}
           {!isSubmitting && <ArrowRight className="w-4 h-4" />}
         </button>
         <a 
-          href="tel:+13105550198" 
-          className="flex-1 surface-tier-3 text-on-surface font-label text-[13px] uppercase tracking-[0.1em] font-semibold py-5 hover:bg-primary hover:text-on-primary transition-colors shadow-md flex items-center justify-center gap-2"
+          href="tel:+13103091620" 
+          className="flex-1 surface-tier-3 text-on-surface font-label text-[13px] uppercase tracking-[0.1em] font-semibold py-5 hover:bg-primary hover:text-on-primary transition-colors shadow-sm border border-surface-variant flex items-center justify-center gap-2"
         >
           <Phone className="w-4 h-4" />
-          Call Us Now
+          {t('For faster service')} (310) 309-1620
         </a>
       </div>
     </form>

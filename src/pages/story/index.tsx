@@ -1,7 +1,10 @@
 import { motion } from 'motion/react';
 import { SEO } from '../../components/seo/SEO';
+import { useI18n } from '../../context/I18nContext';
 
 export const OurStory = () => {
+  const { t } = useI18n();
+
   return (
     <motion.main 
       initial={{ opacity: 0 }} 
@@ -10,88 +13,121 @@ export const OurStory = () => {
       className="bg-background text-on-background selection:bg-primary selection:text-on-primary"
     >
       <SEO 
-        title="Our Paradigm" 
-        description="Structured for alpha. Driven by data. Our firm leverages elite strategic architecture and uncompromising quantitative analysis." 
+        title={t('Clarity and Confidence in Your Numbers')} 
+        description={t('FV Partners exists to give business owners the confidence, strategy, and tools they need to build lasting success.')} 
       />
       <div className="max-w-7xl mx-auto px-6 md:px-12 pt-24 pb-24">
+        
         {/* 1. Hero / Introduction */}
         <header className="flex flex-col items-center justify-center text-center mb-24">
-          <h1 className="font-headline text-5xl md:text-7xl text-on-surface mb-6 tracking-tight font-semibold text-balance">
-            Structured for Alpha.<br/>
-            <span className="italic text-tertiary">Driven by Data.</span>
+          <h1 className="font-headline text-4xl md:text-6xl text-on-surface mb-6 tracking-tight font-bold text-balance max-w-4xl mx-auto">
+            {t('We believe finance should empower.')}
           </h1>
-          <p className="font-body text-xl text-outline max-w-4xl mx-auto leading-relaxed text-balance">
-            FV Partners was engineered to eliminate the gap between raw data and aggressive strategic growth. Founded on the principles of institutional rigor, our firm leverages uncompromising analytics and elite financial architecture.
+          <p className="font-body text-xl md:text-2xl text-outline max-w-4xl mx-auto leading-relaxed text-balance font-medium">
+            {t('FV Partners exists to give business owners the confidence, strategy, and tools they need to build lasting success. CLARITY • PARTNERSHIP • GROWTH')}
           </p>
         </header>
 
         <section className="space-y-32">
-          {/* 2. Foundation Section */}
+          {/* 2. Story Section */}
           <article className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="order-2 lg:order-1 flex flex-col justify-center">
-              <h2 className="font-headline text-4xl text-on-surface mb-2 font-semibold text-balance">The Foundation and The Architecture</h2>
-              <h3 className="font-label text-sm uppercase tracking-[0.2em] text-primary font-bold mb-8">Structural Integrity</h3>
-              <div className="font-body text-lg leading-relaxed flex flex-col gap-5 text-on-surface">
+              <h2 className="font-headline text-3xl md:text-4xl text-on-surface mb-2 font-bold text-balance">{t('OUR STORY AND MISSION')}</h2>
+              <h3 className="font-label text-sm uppercase tracking-[0.2em] text-primary font-bold mb-8">{t('Clarity and Confidence in Your Numbers')}</h3>
+              <div className="font-body text-lg leading-relaxed flex flex-col gap-6 text-on-surface">
                 <p className="text-pretty">
-                  We deploy institutional-grade analytical models to establish a baseline of operational certainty.
+                  {t('FV Partners was built on a simple belief: small and mid-sized businesses deserve the same financial intelligence and strategic guidance as large enterprises.')}
                 </p>
                 <p className="text-pretty text-outline">
-                  Our approach is grounded in absolute precision—emphasizing data validation, risk mitigation, and uncompromising execution to protect enterprise valuation.
+                  {t('After years in corporate finance and banking, our founders, Gulnaz Adigamova and Farida, saw a recurring problem—founders often lacked the financial strategy needed to scale, invest, and exit with confidence.')}
                 </p>
                 <p className="text-pretty text-outline">
-                  By constructing an unassailable financial infrastructure, we ensure that every ledger and metric is pristine, audit-ready, and built to withstand macroeconomic volatility.
+                  {t('FV Partners bridges that gap. We provide clear, proactive, and executive-level financial leadership tailored to each stage of growth.')}
+                </p>
+                <p className="text-pretty font-medium mt-2">
+                  {t('Our mission is to help business owners make smarter decisions, unlock profitability, and prepare for transformative opportunities—from expansion to liquidity events.')}
                 </p>
               </div>
             </div>
             
-            <figure className="order-1 lg:order-2 w-full max-w-md lg:ml-auto mx-auto aspect-[4/5] surface-tier-2 relative overflow-hidden shadow-2xl group">
-              <img 
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80" 
-                alt="Architectural Foundation" 
-                className="w-full h-full object-cover opacity-90 mix-blend-multiply grayscale contrast-125 transition-transform duration-700 ease-in-out group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+            <figure className="order-1 lg:order-2 w-full max-w-md lg:ml-auto mx-auto aspect-[4/5] surface-tier-2 relative overflow-hidden shadow-sm group bg-surface-variant p-2 rounded-sm">
+              <div className="w-full h-full bg-surface-dim flex items-center justify-center">
+                 <span className="text-outline uppercase tracking-widest text-xs font-bold">{t('Image Placeholder')}</span>
+              </div>
             </figure>
           </article>
 
-          {/* 3. Strategy Section */}
-          <article className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <figure className="w-full max-w-md lg:mr-auto mx-auto aspect-[4/5] surface-tier-2 relative overflow-hidden shadow-2xl group">
-              <img 
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80" 
-                alt="Strategic Calculus" 
-                className="w-full h-full object-cover opacity-90 mix-blend-multiply grayscale contrast-125 transition-transform duration-700 ease-in-out group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
-            </figure>
-            
-            <div className="flex flex-col justify-center">
-              <h2 className="font-headline text-4xl text-on-surface mb-2 font-semibold text-balance">The Strategy and The Calculus</h2>
-              <h3 className="font-label text-sm uppercase tracking-[0.2em] text-primary font-bold mb-8">Aggressive Execution</h3>
-              <div className="font-body text-lg leading-relaxed flex flex-col gap-5 text-on-surface">
-                <p className="text-pretty">
-                  Building upon our rigorous foundation, we deploy algorithmic forecasting and advanced financial modeling to force-multiply enterprise value.
-                </p>
-                <p className="text-pretty text-outline">
-                  By transforming static analytics into offensive growth strategies, we optimize capital deployment and structure pathways for scaling organizations.
-                </p>
-                <p className="text-pretty text-outline">
-                  This execution methodology represents the true "Future Value" mechanism. We ensure organizations are not merely protected, but are perfectly structured for aggressive market capture.
-                </p>
-              </div>
+          {/* 3. Who We Work With */}
+          <article className="surface-tier-2 p-12 md:p-16 shadow-sm">
+            <h2 className="font-headline text-3xl md:text-4xl text-on-surface mb-10 font-bold text-center">{t('WHO WE WORK WITH')}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+               <div>
+                  <h3 className="font-headline text-2xl text-tertiary mb-3 font-semibold">{t('STARTUPS & SMALL BUSINESSES')}</h3>
+                  <p className="font-body text-lg text-outline">{t('Building strong financial foundations.')}</p>
+               </div>
+               <div>
+                  <h3 className="font-headline text-2xl text-tertiary mb-3 font-semibold">{t('GROWING SMBs')}</h3>
+                  <p className="font-body text-lg text-outline">{t('Scaling operations with clarity and confidence.')}</p>
+               </div>
             </div>
           </article>
+
+          {/* 4. Core Values & Approach */}
+          <article className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+             <div>
+                <h2 className="font-headline text-3xl md:text-4xl text-on-surface mb-8 font-bold">{t('OUR VALUES')}</h2>
+                <ul className="space-y-6">
+                   <li className="flex items-start gap-4">
+                      <div className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0"></div>
+                      <div>
+                         <strong className="block text-xl font-semibold mb-1 text-tertiary">{t('CLARITY')}</strong>
+                         <span className="text-outline text-lg">{t('We simplify complex financials into actionable insights.')}</span>
+                      </div>
+                   </li>
+                   <li className="flex items-start gap-4">
+                      <div className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0"></div>
+                      <div>
+                         <strong className="block text-xl font-semibold mb-1 text-tertiary">{t('INTEGRITY')}</strong>
+                         <span className="text-outline text-lg">{t('Trust and transparency guide every client relationship.')}</span>
+                      </div>
+                   </li>
+                   <li className="flex items-start gap-4">
+                      <div className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0"></div>
+                      <div>
+                         <strong className="block text-xl font-semibold mb-1 text-tertiary">{t('PARTNERSHIP')}</strong>
+                         <span className="text-outline text-lg">{t('We see ourselves as part of your team, invested in your success.')}</span>
+                      </div>
+                   </li>
+                   <li className="flex items-start gap-4">
+                      <div className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0"></div>
+                      <div>
+                         <strong className="block text-xl font-semibold mb-1 text-tertiary">{t('GROWTH')}</strong>
+                         <span className="text-outline text-lg">{t('We help you plan today for the opportunities of tomorrow.')}</span>
+                      </div>
+                   </li>
+                </ul>
+             </div>
+             
+             <div className="surface-tier-2 p-10 shadow-sm border-t-4 border-tertiary">
+                <h2 className="font-headline text-3xl md:text-4xl text-on-surface mb-8 font-bold">{t('OUR APPROACH')}</h2>
+                <ul className="space-y-8">
+                   <li>
+                      <strong className="block text-xl font-semibold mb-2 text-tertiary">{t('COLLABORATIVE')}</strong>
+                      <span className="text-outline text-lg">{t('We integrate with your business like an in-house finance partner.')}</span>
+                   </li>
+                   <li>
+                      <strong className="block text-xl font-semibold mb-2 text-tertiary">{t('TAILORED')}</strong>
+                      <span className="text-outline text-lg">{t('Every engagement is customized to your stage and goals.')}</span>
+                   </li>
+                   <li>
+                      <strong className="block text-xl font-semibold mb-2 text-tertiary">{t('PROVEN')}</strong>
+                      <span className="text-outline text-lg">{t('Our experience spans startups, SMBs, and companies preparing for capital events.')}</span>
+                   </li>
+                </ul>
+             </div>
+          </article>
         </section>
 
-        {/* 4. Final Quote / Philosophy */}
-        <section className="mt-32 py-24 surface-tier-2 shadow-sm rounded-none px-6">
-          <div className="max-w-5xl mx-auto text-center flex flex-col items-center">
-            <blockquote className="font-headline text-3xl md:text-5xl italic text-on-surface leading-tight mb-10 text-balance">
-              "We execute systemic, unyielding architecture to secure institutional dominance. Our clinical and detached methodologies are specifically engineered to eliminate margin of error."
-            </blockquote>
-            <p className="font-label text-sm uppercase tracking-[0.1em] text-tertiary font-bold">The Firm's Directive</p>
-          </div>
-        </section>
       </div>
     </motion.main>
   );

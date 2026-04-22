@@ -35,7 +35,7 @@ export const Home = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
-          className="font-headline text-4xl md:text-6xl font-bold text-on-surface mb-6 leading-tight tracking-tight text-balance max-w-5xl mx-auto"
+          className="font-headline text-4xl md:text-6xl font-bold text-on-surface mb-6 leading-tight tracking-tight text-pretty max-w-4xl mx-auto"
         >
           {t('home.hero.title')}
         </motion.h1>
@@ -44,7 +44,7 @@ export const Home = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.8, duration: 1 }}
-          className="font-body text-xl md:text-2xl text-outline max-w-3xl mx-auto mb-10 leading-relaxed text-balance font-medium"
+          className="font-body text-xl md:text-2xl text-outline max-w-3xl mx-auto mb-10 leading-relaxed text-pretty font-medium"
         >
           {t('home.hero.subtitle')}
         </motion.p>

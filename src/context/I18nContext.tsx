@@ -19,8 +19,8 @@ const translations = {
     'nav.getStarted': 'Get Started',
     
     // Home Hero
-    'home.hero.title': 'Financial Clarity That Helps Your Business Grow, Scale, and Raise Capital Confidently',
-    'home.hero.subtitle': 'Turn Uncertainty into Insight and Make Every Decision with Confidence.',
+    'home.hero.title': 'Financial Clarity That Helps Your Business Grow, Scale, and Raise Capital\u00A0Confidently',
+    'home.hero.subtitle': 'Turn Uncertainty into Insight and Make Every Decision with\u00A0Confidence.',
     'home.hero.cta': 'Get Your Financial Assessment',
     
     // Home Section 2

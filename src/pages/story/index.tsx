@@ -39,13 +39,13 @@ export const OurStory = () => {
                   {t('FV Partners was built on a simple belief: small and mid-sized businesses deserve the same financial intelligence and strategic guidance as large enterprises.')}
                 </p>
                 <p className="text-pretty text-outline">
-                  {t('After years in corporate finance and banking, our founders, Gulnaz Adigamova and Farida, saw a recurring problem—founders often lacked the financial strategy needed to scale, invest, and exit with confidence.')}
+                  {t('After years in corporate finance and banking, our founders, Gulnaz Adigamova and Farida, saw a recurring problem - founders often lacked the financial strategy needed to scale, invest, and exit with confidence.')}
                 </p>
                 <p className="text-pretty text-outline">
                   {t('FV Partners bridges that gap. We provide clear, proactive, and executive-level financial leadership tailored to each stage of growth.')}
                 </p>
                 <p className="text-pretty font-medium mt-2">
-                  {t('Our mission is to help business owners make smarter decisions, unlock profitability, and prepare for transformative opportunities—from expansion to liquidity events.')}
+                  {t('Our mission is to help business owners make smarter decisions, unlock profitability, and prepare for transformative opportunities - from expansion to liquidity events.')}
                 </p>
               </div>
             </div>

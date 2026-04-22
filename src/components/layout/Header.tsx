@@ -3,8 +3,10 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Phone } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { NewLogo } from '../ui/NewLogo';
+import { useI18n } from '../../context/I18nContext';
 
 export const Header = () => {
+  const { lang, setLang } = useI18n();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -45,6 +47,12 @@ export const Header = () => {
           ))}
           
           <div className="flex items-center gap-6 ml-4">
+            <button 
+              onClick={() => setLang(lang === 'en' ? 'ru' : 'en')} 
+              className="text-[var(--color-tertiary)] hover:text-[var(--color-primary)] font-label text-xs uppercase font-bold tracking-widest px-2 transition-colors"
+            >
+              {lang === 'en' ? 'RU' : 'EN'}
+            </button>
             <a href="tel:+13105550198" className="flex items-center gap-2 text-[var(--color-tertiary)] font-label text-[10px] font-semibold uppercase tracking-widest hover:text-[var(--color-primary)] transition-colors group">
               <Phone className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
               Call Directly
@@ -89,10 +97,21 @@ export const Header = () => {
                   {link.name}
                 </Link>
               ))}
+              <div className="flex items-center gap-6 mt-4">
+                <button 
+                  onClick={() => {
+                    setLang(lang === 'en' ? 'ru' : 'en');
+                    setMobileMenuOpen(false);
+                  }} 
+                  className="text-[var(--color-tertiary)] hover:text-[var(--color-primary)] font-label text-sm uppercase font-bold tracking-widest transition-colors"
+                >
+                  Language: {lang === 'en' ? 'RU' : 'EN'}
+                </button>
+              </div>
               <Link 
                 to="/contact" 
                 onClick={() => setMobileMenuOpen(false)}
-                className="mt-8 px-8 py-4 bg-[var(--color-tertiary)] text-white font-label text-sm uppercase tracking-widest font-bold hover:bg-[var(--color-primary)] transition-colors shadow-xl"
+                className="mt-4 px-8 py-4 bg-[var(--color-tertiary)] text-white font-label text-sm uppercase tracking-widest font-bold hover:bg-[var(--color-primary)] transition-colors shadow-xl"
               >
                 Initiate Diagnostic
               </Link>

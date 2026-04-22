@@ -69,7 +69,7 @@ export const Home = () => {
       {/* Value Props Section */}
       <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="text-center mb-16 max-w-3xl mx-auto">
-          <h2 className="font-headline text-3xl md:text-5xl font-bold text-on-surface mb-6 leading-tight">
+          <h2 className="font-headline text-3xl md:text-5xl font-bold text-on-surface mb-6 leading-tight text-balance">
             {t('home.s2.title')}
           </h2>
           <p className="font-body text-xl text-outline leading-relaxed">

@@ -9,10 +9,11 @@ export const Services = () => {
 
   const services = [
     {
-      level: "Layer 01",
-      title: t('BOOKKEEPING SERVICES'),
+      level: "Level 1",
+      title: t('Fractional Bookkeeping & Controllership'),
       subtitle: t('Accurate Financial Data to Run and Scale Your Business'),
-      desc: t('Your bookkeeping is the foundation of every financial decision you make. We ensure your transactions are accurately recorded, categorized, and reconciled—so you always know exactly where your money is going and how your business is performing.'),
+      desc: t('Your bookkeeping is the foundation of every financial decision you make. We ensure your transactions are accurately recorded, categorized, and reconciled - so you always know exactly where your money is going and how your business is performing.'),
+      icon: <FileText className="w-6 h-6 text-tertiary" />,
       items: [
         t('Prevents costly errors, missed expenses, and profit leakage'), 
         t('Provides clear visibility into cash flow so you can avoid shortages'), 
@@ -21,10 +22,11 @@ export const Services = () => {
       ]
     },
     {
-      level: "Layer 02",
+      level: "Level 2",
       title: t('ACCOUNTING SERVICES'),
       subtitle: t('Financial Reporting That Improves Profitability'),
       desc: t('We go beyond basic bookkeeping by delivering structured financial reporting and analysis that helps you understand your margins, identify inefficiencies, and optimize financial performance.'),
+      icon: <BarChart3 className="w-6 h-6 text-tertiary" />,
       items: [
         t('Identifies your most and least profitable products, services, and clients'), 
         t('Helps control costs and improve operating margins'), 
@@ -33,10 +35,11 @@ export const Services = () => {
       ]
     },
     {
-      level: "Layer 03",
-      title: t('FINANCIAL CONSULTING'),
+      level: "Level 3",
+      title: t('Strategic CFO Services & Exit Planning'),
       subtitle: t('Strategic Financial Leadership, Fractional Cost'),
-      desc: t('Our CFO advisory services provide executive-level financial strategy to help you scale profitably, improve cash flow, and maximize business value—without the expense of a full-time CFO.'),
+      desc: t('Our CFO advisory services provide executive-level financial strategy to help you scale profitably, improve cash flow, and maximize business value - without the expense of a full-time CFO.'),
+      icon: <TrendingUp className="w-6 h-6 text-tertiary" />,
       items: [
         t('Improves cash flow management and capital efficiency'), 
         t('Builds financial models and forecasts to support smarter growth decisions'), 

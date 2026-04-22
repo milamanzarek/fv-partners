@@ -24,14 +24,14 @@ const translations = {
     'home.hero.cta': 'Get Your Financial Assessment',
     
     // Home Section 2
-    'home.s2.title': 'Running a Business Without Financial Clarity Is Risky. We Fix That.',
+    'home.s2.title': 'Running a Business Without Financial Clarity Is Risky. We Fix\u00A0That.',
     'home.s2.desc': 'Most growing companies struggle with:',
     'home.s2.list1': 'Unclear financial reporting',
     'home.s2.list2': 'Cash flow uncertainty',
     'home.s2.list3': 'Inaccurate forecasting',
     'home.s2.list4': 'Capital-unready financials',
     'home.s2.list5': 'Lack of strategic guidance',
-    'home.s2.conclusion': 'FV Partners becomes your strategic finance partner — giving you the structure, insight, and leadership needed to scale confidently and make smarter business decisions.',
+    'home.s2.conclusion': 'FV Partners becomes your strategic finance partner - giving you the structure, insight, and leadership needed to scale confidently and make smarter business decisions.',
     'home.s2.cta': 'Discover More',
 
     // Home Section 3
@@ -56,14 +56,14 @@ const translations = {
     'home.hero.cta': 'Получить финансовую оценку',
     
     // Home Section 2
-    'home.s2.title': 'Вести бизнес без финансовой ясности рискованно. Мы это исправляем.',
+    'home.s2.title': 'Вести бизнес без финансовой ясности рискованно. Мы это\u00A0исправляем.',
     'home.s2.desc': 'Большинство растущих компаний сталкиваются с:',
     'home.s2.list1': 'Непонятной финансовой отчетностью',
     'home.s2.list2': 'Неопределенностью денежных потоков',
     'home.s2.list3': 'Неточным прогнозированием',
     'home.s2.list4': 'Неготовностью финансов к привлечению капитала',
     'home.s2.list5': 'Отсутствием стратегического руководства',
-    'home.s2.conclusion': 'FV Partners становится вашим стратегическим финансовым партнером — предоставляя структуру, понимание и лидерство, необходимые для уверенного масштабирования и принятия более разумных бизнес-решений.',
+    'home.s2.conclusion': 'FV Partners становится вашим стратегическим финансовым партнером - предоставляя структуру, понимание и лидерство, необходимые для уверенного масштабирования и принятия более разумных бизнес-решений.',
     'home.s2.cta': 'Узнать больше',
 
     // Home Section 3

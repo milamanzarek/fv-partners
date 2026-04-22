@@ -76,7 +76,19 @@ const translations = {
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
 export const I18nProvider = ({ children }: { children: ReactNode }) => {
-  const [lang, setLang] = useState<Language>('en');
+  const [lang, setLangState] = useState<Language>(() => {
+    const params = new URLSearchParams(window.location.search);
+    const urlLang = params.get('lang');
+    if (urlLang === 'ru' || urlLang === 'en') return urlLang;
+    return 'en';
+  });
+
+  const setLang = (newLang: Language) => {
+    setLangState(newLang);
+    const url = new URL(window.location.href);
+    url.searchParams.set('lang', newLang);
+    window.history.pushState({}, '', url);
+  };
 
   const t = (key: string): string => {
     // @ts-ignore

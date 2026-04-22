@@ -31,12 +31,12 @@ const translations = {
     'home.s2.list3': 'Inaccurate forecasting',
     'home.s2.list4': 'Capital-unready financials',
     'home.s2.list5': 'Lack of strategic guidance',
-    'home.s2.conclusion': 'FV Partners becomes your strategic finance partner - giving you the structure, insight, and leadership needed to scale confidently and make smarter business decisions.',
+    'home.s2.conclusion': 'FV Partners becomes your strategic finance partner - giving you the structure, insight, and leadership needed to scale confidently and make smarter business\u00A0decisions.',
     'home.s2.cta': 'Discover More',
 
     // Home Section 3
     'home.s3.title': 'Take Control of Your Financial Future Today',
-    'home.s3.subtitle': 'From accurate books to actionable insights, we help growing businesses make confident decisions and scale smarter.',
+    'home.s3.subtitle': 'From accurate books to actionable insights, we help growing businesses make confident decisions and scale\u00A0smarter.',
     'home.s3.cta': 'Book Your Free Consultation',
     
     // More keys can be added here...

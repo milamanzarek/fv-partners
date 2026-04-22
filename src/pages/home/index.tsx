@@ -69,7 +69,7 @@ export const Home = () => {
       {/* Value Props Section */}
       <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="text-center mb-20 max-w-4xl mx-auto flex flex-col items-center">
-          <h2 className="font-headline text-3xl md:text-4xl font-semibold text-[var(--color-on-surface)] mb-8 leading-snug tracking-tight text-pretty max-w-3xl">
+          <h2 className="font-headline text-3xl md:text-4xl font-semibold text-[var(--color-on-surface)] mb-8 leading-snug tracking-tight text-pretty max-w-4xl whitespace-pre-line">
             {t('home.s2.title')}
           </h2>
           <p className="font-body text-xl md:text-2xl text-[var(--color-outline)] leading-relaxed font-medium max-w-2xl text-pretty">
@@ -77,7 +77,7 @@ export const Home = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="flex flex-wrap justify-center gap-6 mb-16">
           {[
             t('home.s2.list1'),
             t('home.s2.list2'),
@@ -87,7 +87,7 @@ export const Home = () => {
           ].map((item, idx) => (
             <article 
               key={idx} 
-              className="p-8 surface-tier-2 hover:surface-tier-3 transition-colors group shadow-sm flex items-start gap-4"
+              className="p-8 surface-tier-2 hover:surface-tier-3 transition-colors group shadow-sm flex items-start gap-4 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-md"
             >
               <div className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0"></div>
               <h3 className="font-headline text-xl text-on-surface group-hover:text-tertiary transition-colors">{item}</h3>

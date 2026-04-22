@@ -35,7 +35,7 @@ const translations = {
     'home.s2.cta': 'Discover More',
 
     // Home Section 3
-    'home.s3.title': 'Take Control of Your Financial Future Today',
+    'home.s3.title': 'Take Control of Your Financial Future\u00A0Today',
     'home.s3.subtitle': 'From accurate books to actionable insights, we help growing businesses make confident decisions and scale\u00A0smarter.',
     'home.s3.cta': 'Book Your Free Consultation',
     

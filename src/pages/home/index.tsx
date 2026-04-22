@@ -108,10 +108,10 @@ export const Home = () => {
       {/* Final CTA Section */}
       <section className="py-24 surface-tier-2 px-6 text-center border-t border-surface-variant">
         <div className="max-w-4xl mx-auto flex flex-col items-center justify-center">
-          <h2 className="font-headline text-3xl md:text-5xl font-bold text-on-surface mb-6 leading-tight">
+          <h2 className="font-headline text-3xl md:text-5xl font-bold text-on-surface mb-6 leading-tight text-pretty">
             {t('home.s3.title')}
           </h2>
-          <p className="font-body text-xl text-outline leading-relaxed mb-10 max-w-2xl mx-auto">
+          <p className="font-body text-xl text-outline leading-relaxed mb-10 max-w-2xl mx-auto text-pretty">
             {t('home.s3.subtitle')}
           </p>
           <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-tertiary text-on-tertiary font-label text-sm uppercase tracking-[0.1em] font-semibold hover:bg-primary transition-colors">

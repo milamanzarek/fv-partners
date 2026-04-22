@@ -23,8 +23,11 @@ export const OurStory = () => {
           <h1 className="font-headline text-4xl md:text-6xl text-on-surface mb-6 tracking-tight font-bold text-balance max-w-4xl mx-auto">
             {t('We believe finance should empower.')}
           </h1>
-          <p className="font-body text-xl md:text-2xl text-outline max-w-4xl mx-auto leading-relaxed text-balance font-medium">
-            {t('FV Partners exists to give business owners the confidence, strategy, and tools they need to build lasting success. CLARITY • PARTNERSHIP • GROWTH')}
+          <p className="font-body text-xl md:text-2xl text-[var(--color-outline)] max-w-4xl mx-auto leading-relaxed text-pretty font-medium mb-8">
+            {t('FV Partners exists to give business owners the confidence, strategy, and tools they need to build lasting success.')}
+          </p>
+          <p className="font-label text-sm md:text-base uppercase tracking-[0.3em] text-[var(--color-primary)] font-bold">
+            {t('CLARITY • PARTNERSHIP • GROWTH')}
           </p>
         </header>
 

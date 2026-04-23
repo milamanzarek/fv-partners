@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, FileText, BarChart3, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../../components/seo/SEO';
 import { useI18n } from '../../context/I18nContext';
@@ -65,7 +65,7 @@ export const Services = () => {
         <motion.h1 
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className="font-headline text-4xl md:text-6xl text-on-surface mb-6 tracking-tight font-bold"
+          className="font-headline text-4xl md:text-5xl lg:text-6xl text-on-surface mb-6 tracking-tight font-bold md:whitespace-nowrap"
         >
           {t('Take Control of Your Financial Future Today')}
         </motion.h1>

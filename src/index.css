@@ -91,3 +91,69 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--color-surface-container-lowest);
 }
 
+/* Auto-playing premium brand logo carousel */
+.logo-carousel {
+  @apply relative overflow-hidden;
+}
+
+.logo-carousel::before,
+.logo-carousel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 48px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.logo-carousel::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-background), transparent);
+}
+
+.logo-carousel::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-background), transparent);
+}
+
+.logo-carousel-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 1rem;
+  animation: logo-marquee 45s linear infinite;
+  will-change: transform;
+}
+
+.logo-carousel-item {
+  @apply bg-white rounded-xl border border-[var(--color-surface-variant)] flex items-center justify-center shrink-0;
+  width: 180px;
+  height: 84px;
+  padding: 0.75rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .logo-carousel-track {
+    gap: 1.25rem;
+  }
+  .logo-carousel-item {
+    width: 210px;
+    height: 92px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-carousel-track {
+    animation: none;
+  }
+}
+
+@keyframes logo-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

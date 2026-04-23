@@ -105,6 +105,58 @@ export const Home = () => {
         </div>
       </section>
 
+      {/* Trust Carousel */}
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 mb-10 text-center">
+          <h3 className="font-label text-sm uppercase tracking-[0.2em] text-[var(--color-primary)] font-bold">
+            {t('home.carousel.title')}
+          </h3>
+        </div>
+        <div className="logo-carousel max-w-6xl mx-auto">
+          <div className="logo-carousel-track">
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+              <div className="logo-carousel-item" key={i}>
+                <div className="w-full h-full bg-[var(--color-surface-variant)] opacity-20 rounded animate-pulse flex items-center justify-center">
+                  <span className="text-[10px] font-label text-[var(--color-outline)] uppercase">Logo {i}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <section className="py-24 surface-tier-2 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="font-headline text-3xl md:text-4xl font-bold text-[var(--color-on-surface)] mb-4">
+              {t('home.reviews.title')}
+            </h2>
+            <div className="flex justify-center gap-1 text-[#FFB800]">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <svg key={star} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                  <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
+                </svg>
+              ))}
+            </div>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[1, 2, 3].map((review) => (
+              <div key={review} className="bg-white p-8 border border-[var(--color-surface-variant)] shadow-sm flex flex-col h-full">
+                <p className="font-body text-[var(--color-outline)] italic leading-relaxed mb-6 flex-grow">
+                  {t('home.reviews.placeholder1')}
+                </p>
+                <div className="border-t border-[var(--color-surface-variant)] pt-6 mt-auto">
+                  <h4 className="font-headline font-bold text-[var(--color-on-surface)] text-sm">James T.</h4>
+                  <p className="font-body text-xs text-[var(--color-outline)]">Founder, BrightFuture Labs</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA Section */}
       <section className="py-24 surface-tier-2 px-6 text-center border-t border-surface-variant">
         <div className="max-w-4xl mx-auto flex flex-col items-center justify-center">

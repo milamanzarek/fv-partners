@@ -18,9 +18,10 @@ export const Header = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
     { name: 'Our Paradigm', path: '/story' },
+    { name: 'Team', path: '/team' },
     { name: 'Services', path: '/services' },
+    { name: 'Partners', path: '/partners' },
     { name: 'Insights', path: '/insights' },
     { name: 'Resources', path: '/resources' },
   ];
@@ -34,7 +35,7 @@ export const Header = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <nav aria-label="Main Navigation" className="hidden lg:flex items-center gap-6 xl:gap-8">
+        <nav aria-label="Main Navigation" className="hidden xl:flex items-center gap-4">
           {navLinks.map((link) => (
             <Link 
               key={link.name} 
@@ -46,18 +47,18 @@ export const Header = () => {
             </Link>
           ))}
           
-          <div className="flex items-center gap-6 ml-4">
+          <div className="flex items-center gap-4 ml-2">
             <button 
               onClick={() => setLang(lang === 'en' ? 'ru' : 'en')} 
               className="text-[var(--color-tertiary)] hover:text-[var(--color-primary)] font-label text-xs uppercase font-bold tracking-widest px-2 transition-colors"
             >
               {lang === 'en' ? 'RU' : 'EN'}
             </button>
-            <a href="tel:+13105550198" className="flex items-center gap-2 text-[var(--color-tertiary)] font-label text-[10px] font-semibold uppercase tracking-widest hover:text-[var(--color-primary)] transition-colors group">
-              <Phone className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
+            <a href="tel:+13105550198" className="flex items-center gap-2 text-[var(--color-tertiary)] font-label text-[10px] font-semibold uppercase tracking-widest hover:text-[var(--color-primary)] transition-colors group whitespace-nowrap shrink-0">
+              <Phone className="w-3.5 h-3.5 group-hover:scale-110 transition-transform shrink-0" />
               Call Directly
             </a>
-            <Link to="/contact" className="px-6 py-3 bg-[var(--color-tertiary)] text-white font-label text-xs uppercase tracking-[0.1em] font-semibold hover:bg-[var(--color-primary)] transition-colors shadow-lg">
+            <Link to="/contact" className="px-5 py-3 bg-[var(--color-tertiary)] text-white font-label text-xs uppercase tracking-[0.1em] font-semibold hover:bg-[var(--color-primary)] transition-colors shadow-lg whitespace-nowrap shrink-0">
               Initiate Diagnostic
             </Link>
           </div>
@@ -65,7 +66,7 @@ export const Header = () => {
 
         {/* Mobile Toggle */}
         <button 
-          className="lg:hidden text-[var(--color-on-surface)] z-50 p-2 -mr-2" 
+          className="xl:hidden text-[var(--color-on-surface)] z-50 p-2 -mr-2" 
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-expanded={mobileMenuOpen}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}

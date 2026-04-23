@@ -7,6 +7,10 @@ import { Insights } from '../pages/insights';
 import { Resources } from '../pages/resources';
 import { Contact } from '../pages/contact';
 import { ThankYou } from '../pages/contact/ThankYou';
+import { Team } from '../pages/team';
+import { Partners } from '../pages/partners';
+import { GeoTemplate } from '../pages/geo/GeoTemplate';
+import { NotFound } from '../pages/error/NotFound';
 
 export const AnimatedRoutes = () => {
   const location = useLocation();
@@ -25,8 +29,13 @@ export const AnimatedRoutes = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/insights" element={<Insights />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/partners" element={<Partners />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/thank-you" element={<ThankYou />} />
+          <Route path="/404" element={<NotFound />} />
+          <Route path="/:slug" element={<GeoTemplate />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </motion.div>
     </AnimatePresence>

@@ -25,15 +25,15 @@ export interface ContactFormData {
  * 
  * 4. Click Deploy > New deployment.
  * 5. Type: Web app. Access: "Anyone". Deploy.
- * 6. Copy the Web App URL and paste it below.
+ * 6. Copy the Web App URL and set it in your environment variables as VITE_GOOGLE_SCRIPT_URL.
  */
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwYOUR_SCRIPT_ID_HERE/exec';
+const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
 
 export const submitContactForm = async (data: ContactFormData): Promise<{ success: boolean; message: string }> => {
   try {
     // Note: If the GOOGLE_SCRIPT_URL is not set up yet, simulate a success for now.
-    if (GOOGLE_SCRIPT_URL.includes('YOUR_SCRIPT_ID_HERE')) {
+    if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes('YOUR_SCRIPT_ID_HERE')) {
       console.log('Simulating form submission (Google Script URL not configured):', data);
       return { success: true, message: 'Message sent successfully.' };
     }

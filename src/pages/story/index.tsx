@@ -53,9 +53,13 @@ export const OurStory = () => {
               </div>
             </div>
             
-            <figure className="order-1 lg:order-2 w-full max-w-md lg:ml-auto mx-auto aspect-[4/5] surface-tier-2 relative overflow-hidden shadow-sm group bg-surface-variant p-2 rounded-sm">
-              <div className="w-full h-full bg-surface-dim flex items-center justify-center">
-                 <span className="text-outline uppercase tracking-widest text-xs font-bold">{t('Image Placeholder')}</span>
+            <figure className="order-1 lg:order-2 w-full max-w-md lg:ml-auto mx-auto aspect-[4/5] surface-tier-2 relative overflow-hidden shadow-sm group p-2 rounded-sm bg-white">
+              <div className="w-full h-full relative overflow-hidden bg-surface-dim">
+                <img 
+                  src="https://res.cloudinary.com/dp9lnazkj/image/upload/v1777402661/our-paradigm-FV-Partners_zhk77g.png" 
+                  alt="FV Partners Our Paradigm" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
               </div>
             </figure>
           </article>
@@ -63,21 +67,21 @@ export const OurStory = () => {
           {/* 3. Who We Work With */}
           <article className="surface-tier-2 p-12 md:p-16 shadow-sm">
             <h2 className="font-headline text-3xl md:text-4xl text-on-surface mb-10 font-bold text-center">{t('WHO WE WORK WITH')}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-               <div>
-                  <h3 className="font-headline text-2xl text-tertiary mb-3 font-semibold">{t('STARTUPS & SMALL BUSINESSES')}</h3>
-                  <p className="font-body text-lg text-outline">{t('Building strong financial foundations.')}</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+               <div className="flex flex-col justify-start h-full text-left bg-background p-8 md:p-10 border border-surface-variant">
+                  <h3 className="font-headline text-xl md:text-2xl text-tertiary mb-4 font-bold leading-snug text-balance">{t('STARTUPS & SMALL BUSINESSES')}</h3>
+                  <p className="font-body text-base md:text-lg text-outline leading-relaxed text-pretty">{t('Building strong financial foundations.')}</p>
                </div>
-               <div>
-                  <h3 className="font-headline text-2xl text-tertiary mb-3 font-semibold">{t('GROWING SMBs')}</h3>
-                  <p className="font-body text-lg text-outline">{t('Scaling operations with clarity and confidence.')}</p>
+               <div className="flex flex-col justify-start h-full text-left bg-background p-8 md:p-10 border border-surface-variant">
+                  <h3 className="font-headline text-xl md:text-2xl text-tertiary mb-4 font-bold leading-snug text-balance">{t('GROWING SMBs')}</h3>
+                  <p className="font-body text-base md:text-lg text-outline leading-relaxed text-pretty">{t('Scaling operations with clarity and confidence.')}</p>
                </div>
             </div>
           </article>
 
           {/* 4. Core Values & Approach */}
           <article className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-             <div>
+             <div className="lg:py-10">
                 <h2 className="font-headline text-3xl md:text-4xl text-on-surface mb-8 font-bold">{t('OUR VALUES')}</h2>
                 <ul className="space-y-6">
                    <li className="flex items-start gap-4">
@@ -111,7 +115,7 @@ export const OurStory = () => {
                 </ul>
              </div>
              
-             <div className="surface-tier-2 p-10 shadow-sm border-t-4 border-tertiary">
+             <div className="surface-tier-2 p-10 shadow-sm">
                 <h2 className="font-headline text-3xl md:text-4xl text-on-surface mb-8 font-bold">{t('OUR APPROACH')}</h2>
                 <ul className="space-y-8">
                    <li>

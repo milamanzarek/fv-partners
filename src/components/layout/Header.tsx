@@ -66,7 +66,7 @@ export const Header = () => {
 
         {/* Mobile Toggle */}
         <button 
-          className="xl:hidden text-[var(--color-on-surface)] z-50 p-2 -mr-2" 
+          className="xl:hidden text-[var(--color-on-surface)] z-[110] relative p-2 -mr-2" 
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-expanded={mobileMenuOpen}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
@@ -86,7 +86,7 @@ export const Header = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="fixed top-0 left-0 w-full h-screen bg-[var(--color-surface)] flex flex-col items-center justify-center gap-8 z-40"
+              className="fixed inset-0 w-full h-[100dvh] bg-[var(--color-surface)] flex flex-col items-center justify-center gap-8 z-[100]"
             >
               {navLinks.map((link) => (
                 <Link 

@@ -9,7 +9,7 @@ export const ThankYou = () => {
       initial={{ opacity: 0 }} 
       animate={{ opacity: 1 }} 
       exit={{ opacity: 0 }} 
-      className="min-h-screen bg-background text-on-background flex flex-col items-center justify-center px-6 text-center pt-20 selection:bg-primary selection:text-on-primary"
+      className="bg-background text-on-background flex flex-col items-center justify-center px-6 text-center pt-20 selection:bg-primary selection:text-on-primary"
     >
       <SEO 
         title="Thank You" 
@@ -31,7 +31,7 @@ export const ThankYou = () => {
         
         <div className="space-y-6 mb-12">
           <p className="font-body text-xl text-outline leading-relaxed text-balance">
-            Your inquiry has been secured. We will get back to you within the next 24 hours.
+            Thank you for your message! We will get back to you as soon as possible.
           </p>
           <p className="font-body text-lg text-secondary italic text-balance">
             Don't want to wait? Call us today.
@@ -55,9 +55,14 @@ export const ThankYou = () => {
             </Link>
           </div>
 
-          <Link to="/insights" className="inline-flex items-center gap-2 text-on-surface font-label text-xs uppercase tracking-[0.2em] hover:text-primary transition-colors pb-1 group">
-            Explore The Vault <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            <Link to="/insights" className="inline-flex items-center gap-2 text-on-surface font-label text-xs uppercase tracking-[0.2em] hover:text-primary transition-colors group">
+              Explore The Vault <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <a href="#" className="inline-flex items-center gap-2 text-[#0A66C2] font-label text-xs uppercase tracking-[0.2em] hover:text-[#004182] transition-colors group">
+              Connect on LinkedIn <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
         </div>
       </motion.div>
     </motion.div>

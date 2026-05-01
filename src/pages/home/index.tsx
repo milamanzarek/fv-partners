@@ -21,49 +21,57 @@ export const Home = () => {
       />
       
       {/* Hero Section */}
-      <section className="min-h-[85vh] flex flex-col items-center justify-center text-center px-6 relative pt-20 surface-tier-3 bg-white">
-        <motion.div 
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-          className="mb-10 text-tertiary"
-        >
-          <NewLogo className="w-32 h-32 md:w-48 md:h-48 drop-shadow-xl mx-auto" />
-        </motion.div>
-        
-        <motion.h1 
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5, duration: 1 }}
-          className="font-headline text-4xl md:text-6xl font-bold text-on-surface mb-6 leading-tight tracking-tight text-pretty max-w-4xl mx-auto"
-        >
-          {t('home.hero.title')}
-        </motion.h1>
-        
-        <motion.p 
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.8, duration: 1 }}
-          className="font-body text-xl md:text-2xl text-outline max-w-3xl mx-auto mb-10 leading-relaxed text-pretty font-medium"
-        >
-          {t('home.hero.subtitle')}
-        </motion.p>
-        
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 1 }}
-          className="flex flex-col items-center gap-6"
-        >
-          <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-tertiary text-on-tertiary font-label text-base uppercase tracking-[0.1em] font-semibold hover:bg-primary hover:text-on-primary transition-colors shadow-lg">
-            {t('home.hero.cta')} <ArrowRight className="w-5 h-5" />
-          </Link>
+      <section className="min-h-[85vh] flex flex-col items-center justify-center text-center px-6 relative pt-20 surface-tier-3 bg-white overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img src="/images/hero.jpg" alt="Corporate structure" className="w-full h-full object-cover opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/90"></div>
+        </div>
+
+        <div className="relative z-10 flex flex-col items-center justify-center w-full">
+          <motion.div 
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="mb-10 text-tertiary"
+          >
+            <NewLogo className="w-32 h-32 md:w-48 md:h-48 drop-shadow-xl mx-auto" />
+          </motion.div>
           
-          <a href="tel:+13103091620" className="inline-flex items-center gap-2 text-outline font-label text-xs uppercase tracking-[0.2em] hover:text-primary transition-colors group">
-            <Phone className="w-3.5 h-3.5 text-tertiary group-hover:scale-110 transition-transform" />
-            (310) 309-1620
-          </a>
-        </motion.div>
+          <motion.h1 
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.5, duration: 1 }}
+            className="font-headline text-4xl md:text-6xl font-bold text-on-surface mb-6 leading-tight tracking-tight text-pretty max-w-4xl mx-auto"
+          >
+            {t('home.hero.title')}
+          </motion.h1>
+          
+          <motion.p 
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.8, duration: 1 }}
+            className="font-body text-xl md:text-2xl text-outline max-w-3xl mx-auto mb-10 leading-relaxed text-pretty font-medium"
+          >
+            {t('home.hero.subtitle')}
+          </motion.p>
+          
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 1 }}
+            className="flex flex-col items-center gap-6"
+          >
+            <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-tertiary text-on-tertiary font-label text-base uppercase tracking-[0.1em] font-semibold hover:bg-primary hover:text-on-primary transition-colors shadow-lg">
+              {t('home.hero.cta')} <ArrowRight className="w-5 h-5" />
+            </Link>
+            
+            <a href="tel:+13103091620" className="inline-flex items-center gap-2 text-outline font-label text-xs uppercase tracking-[0.2em] hover:text-primary transition-colors group">
+              <Phone className="w-3.5 h-3.5 text-tertiary group-hover:scale-110 transition-transform" />
+              (310) 309-1620
+            </a>
+          </motion.div>
+        </div>
       </section>
 
       {/* Value Props Section */}
@@ -114,11 +122,21 @@ export const Home = () => {
         </div>
         <div className="logo-carousel max-w-6xl mx-auto">
           <div className="logo-carousel-track">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-              <div className="logo-carousel-item" key={i}>
-                <div className="w-full h-full bg-[var(--color-surface-variant)] opacity-20 rounded animate-pulse flex items-center justify-center">
-                  <span className="text-[10px] font-label text-[var(--color-outline)] uppercase">Logo {i}</span>
-                </div>
+            {[
+              { name: "Tuganlyq", url: "https://res.cloudinary.com/dp9lnazkj/image/upload/f_webp/q_auto:best/Tuganlyq-logo-full-color_l6osyb.png" },
+              { name: "Meaningful Events", url: "https://res.cloudinary.com/dp9lnazkj/image/upload/f_webp/q_auto:best/meaningful-events-logo_xwiqfx.png" },
+              { name: "Luxiomer", url: "https://res.cloudinary.com/dp9lnazkj/image/upload/f_webp/q_auto:best/luxiomer-logo_txuyjp.png" },
+              { name: "Cleenora", url: "https://res.cloudinary.com/dp9lnazkj/image/upload/f_webp/q_auto:best/cleenora-logo_yemtwq.webp" },
+              { name: "Electricians", url: "https://res.cloudinary.com/dp9lnazkj/image/upload/f_webp/q_auto:best/electricians-logo_akommg.webp" },
+              // Duplicate for infinite scroll effect
+              { name: "Tuganlyq", url: "https://res.cloudinary.com/dp9lnazkj/image/upload/f_webp/q_auto:best/Tuganlyq-logo-full-color_l6osyb.png" },
+              { name: "Meaningful Events", url: "https://res.cloudinary.com/dp9lnazkj/image/upload/f_webp/q_auto:best/meaningful-events-logo_xwiqfx.png" },
+              { name: "Luxiomer", url: "https://res.cloudinary.com/dp9lnazkj/image/upload/f_webp/q_auto:best/luxiomer-logo_txuyjp.png" },
+              { name: "Cleenora", url: "https://res.cloudinary.com/dp9lnazkj/image/upload/f_webp/q_auto:best/cleenora-logo_yemtwq.webp" },
+              { name: "Electricians", url: "https://res.cloudinary.com/dp9lnazkj/image/upload/f_webp/q_auto:best/electricians-logo_akommg.webp" },
+            ].map((logo, i) => (
+              <div className="logo-carousel-item flex items-center justify-center p-4" key={i}>
+                <img src={logo.url} alt={logo.name} className="max-w-[150px] max-h-[80px] object-contain opacity-70 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
               </div>
             ))}
           </div>

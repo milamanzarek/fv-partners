@@ -1,25 +1,26 @@
 export interface ContactFormData {
-  name: string;
+  formType?: string;
+  name?: string;
+  firstName?: string;
+  lastName?: string;
   email: string;
-  phone: string;
-  company: string;
-  city: string;
-  state: string;
-  message: string;
+  phone?: string;
+  message?: string;
+  resourceTitle?: string;
 }
 
 /**
  * Sends contact form data to a Google Sheets document via Google Apps Script.
  * 
  * Instructions for Google Sheets Setup:
- * 1. Open your Google Sheet: https://docs.google.com/spreadsheets/d/16O8k5g21hPWxwzsW0v7FbGWJyZSfwxRg9wC9PRGSop4/edit?usp=sharing
+ * 1. Open your Google Sheet
  * 2. Go to Extensions > Apps Script.
  * 3. Paste the following code:
  * 
  * function doPost(e) {
  *   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
  *   var data = JSON.parse(e.postData.contents);
- *   sheet.appendRow([new Date(), data.name, data.email, data.phone, data.company, data.city, data.state, data.message]);
+ *   sheet.appendRow([new Date(), data.firstName, data.lastName, data.email, data.phone, data.message]);
  *   return ContentService.createTextOutput(JSON.stringify({ "success": true })).setMimeType(ContentService.MimeType.JSON);
  * }
  * 
@@ -28,7 +29,7 @@ export interface ContactFormData {
  * 6. Copy the Web App URL and paste it below.
  */
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwYOUR_SCRIPT_ID_HERE/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwcCVSj2TbgHersLHOmNZNYaaf7pCuKWB0ldse4QPB_w5J1dC3b3M1Qk5NAtcjSMV3l/exec';
 
 export const submitContactForm = async (data: ContactFormData): Promise<{ success: boolean; message: string }> => {
   try {

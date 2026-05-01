@@ -12,7 +12,7 @@ export const Contact = () => {
       initial={{ opacity: 0 }} 
       animate={{ opacity: 1 }} 
       exit={{ opacity: 0 }} 
-      className="min-h-screen bg-background text-on-background flex flex-col lg:flex-row pt-20 lg:pt-0 selection:bg-primary selection:text-on-primary"
+      className="bg-background text-on-background flex flex-col lg:flex-row pt-20 lg:pt-0 selection:bg-primary selection:text-on-primary"
     >
       <SEO 
         title={t('nav.contact')} 
@@ -38,20 +38,19 @@ export const Contact = () => {
       </section>
 
       {/* Right: Image & Direct Contact */}
-      <aside className="w-full lg:w-[45%] bg-surface-dim relative flex flex-col shadow-sm border-l border-surface-variant h-full z-20">
-        {/* Empty space for design balance */}
-        <div className="flex-grow flex items-center justify-center p-12">
-           <div className="text-center space-y-6">
-              <h2 className="font-headline text-3xl font-bold">{t('READY FOR A CONSULTATION?')}</h2>
-              <p className="font-body text-lg text-outline">{t('SAVE TIME - BOOK A CONSULTATION')}</p>
-              <div className="bg-white p-8 rounded-sm shadow-sm inline-block w-full max-w-sm aspect-video flex items-center justify-center border border-surface-variant cursor-pointer hover:border-tertiary transition-colors" onClick={() => window.open('https://calendly.com/', '_blank')}>
-                 <span className="font-label text-tertiary font-bold tracking-widest">{t('CALENDLY EMBED')}</span>
-              </div>
+      <aside className="w-full lg:w-[45%] bg-surface-dim relative flex flex-col shadow-sm h-full z-20">
+        {/* Calendar Embed */}
+        <div className="flex-grow flex flex-col items-center justify-center p-4 lg:p-8 relative w-full h-full">
+           <div className="w-full h-full min-h-[400px] lg:min-h-[500px] flex items-center justify-center bg-white rounded-sm shadow-inner relative overflow-hidden">
+               <iframe src="https://calendar.google.com/calendar/embed?src=contact%40fvpartners.us&ctz=America%2FLos_Angeles" style={{ border: 0 }} className="absolute inset-0 w-full h-full" frameBorder="0" scrolling="no"></iframe>
            </div>
+           <a href="https://calendar.app.google/JD47skP1FCrJbbwy8" target="_blank" rel="noopener noreferrer" className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-fv-navy text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest shadow-lg hover:bg-tertiary transition-colors z-10">
+              Open Full Calendar
+           </a>
         </div>
         
         {/* Info Container */}
-        <div className="p-8 md:p-16 shrink-0 surface-tier-2 shadow-sm border-t border-surface-variant z-30">
+        <div className="p-8 md:p-16 shrink-0 surface-tier-2 shadow-sm z-30">
           <h2 className="font-headline text-2xl mb-8 text-on-surface tracking-tight font-bold">{t('Terminal Access')}</h2>
           
           <div className="space-y-8">

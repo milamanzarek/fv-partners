@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Mail, ArrowRight, Loader2 } from 'lucide-react';
 import { useState } from 'react';
+import { submitContactForm } from '../../services/api';
 
 interface EmailCaptureModalProps {
   isOpen: boolean;
@@ -18,8 +19,13 @@ export const EmailCaptureModal = ({ isOpen, onClose, resourceTitle, onSuccess }:
     if (!email) return;
 
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    await submitContactForm({
+      formType: 'Lead Magnet Download',
+      email: email,
+      resourceTitle: resourceTitle
+    });
+    
     setIsSubmitting(false);
     onSuccess(email);
     setEmail('');

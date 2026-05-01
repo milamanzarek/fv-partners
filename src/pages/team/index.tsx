@@ -8,7 +8,7 @@ export const Team = () => {
       initial={{ opacity: 0 }} 
       animate={{ opacity: 1 }} 
       exit={{ opacity: 0 }} 
-      className="min-h-screen bg-[var(--color-surface)]"
+      className="bg-[var(--color-surface)]"
     >
       <SEO 
         title="Our Team" 
@@ -30,20 +30,20 @@ export const Team = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           
           {/* Gulnaz Adigamova */}
-          <article className="surface-tier-2 p-8 md:p-12 shadow-sm flex flex-col h-full border-t-4 border-[var(--color-primary)]">
+          <article className="surface-tier-2 p-8 md:p-12 shadow-sm flex flex-col h-full border-t-4 border-[var(--color-primary)] group">
             <div className="flex flex-col md:flex-row gap-8 items-start mb-10">
-              <div className="w-32 h-32 md:w-48 md:h-48 shrink-0">
+              <div className="w-32 h-32 md:w-48 md:h-48 shrink-0 overflow-hidden">
                 <img 
-                  src="https://res.cloudinary.com/dp9lnazkj/image/upload/v1776914822/gulnaz-adigamova-hex-frame-color_anjkbh.png" 
+                  src="https://res.cloudinary.com/dp9lnazkj/image/upload/v1777155572/gulnaz-hex-blue_pvjmlt.png" 
                   alt="Gulnaz Adigamova" 
-                  className="w-full h-full object-contain drop-shadow-lg"
+                  className="w-full h-full object-contain drop-shadow-lg transition-all duration-700 ease-out group-hover:scale-105 group-hover:contrast-125"
                 />
               </div>
               <div>
-                <h2 className="font-headline text-3xl font-bold text-[var(--color-on-surface)] mb-2">Gulnaz Adigamova</h2>
+                <h2 className="font-headline text-3xl font-bold text-[var(--color-on-surface)] mb-2 whitespace-nowrap">Gulnaz Adigamova</h2>
                 <h3 className="font-label text-xs uppercase tracking-[0.2em] text-[var(--color-primary)] font-bold mb-6">Principal & Co-Founder</h3>
                 <p className="font-body text-base text-[var(--color-outline)] leading-relaxed text-pretty">
-                  Driving strategic financial planning, analysis, and comprehensive growth frameworks for scaling enterprises.
+                  Driving strategic financial planning, analysis, and comprehensive growth frameworks for scaling&nbsp;enterprises.
                 </p>
               </div>
             </div>
@@ -54,7 +54,7 @@ export const Team = () => {
                 <div>
                   <h4 className="font-headline font-semibold text-[var(--color-on-surface)] mb-1">Education</h4>
                   <p className="font-body text-sm text-[var(--color-outline)] leading-relaxed">
-                    B.S. in Finance with Honors — California State University, Northridge (2014)
+                    B.S. in Finance with Honors — California State University, Northridge&nbsp;(2014)
                   </p>
                 </div>
               </div>
@@ -74,9 +74,9 @@ export const Team = () => {
                 <div>
                   <h4 className="font-headline font-semibold text-[var(--color-on-surface)] mb-1">Certifications</h4>
                   <ul className="font-body text-sm text-[var(--color-outline)] leading-relaxed list-disc pl-4 space-y-1">
-                    <li>Financial Planning & Analysis Professional (FPAP)</li>
-                    <li>Financial Modeling & Valuation Analyst (FMVA)</li>
-                    <li>AI for Finance Specialization (CFI)</li>
+                    <li>Financial Planning & Analysis Professional&nbsp;(FPAP)</li>
+                    <li>Financial Modeling & Valuation Analyst&nbsp;(FMVA)</li>
+                    <li>AI for Finance Specialization&nbsp;(CFI)</li>
                   </ul>
                 </div>
               </div>
@@ -84,20 +84,20 @@ export const Team = () => {
           </article>
 
           {/* Farida Adigamova */}
-          <article className="surface-tier-2 p-8 md:p-12 shadow-sm flex flex-col h-full border-t-4 border-[var(--color-tertiary)]">
+          <article className="surface-tier-2 p-8 md:p-12 shadow-sm flex flex-col h-full border-t-4 border-[var(--color-tertiary)] group">
             <div className="flex flex-col md:flex-row gap-8 items-start mb-10">
-              <div className="w-32 h-32 md:w-48 md:h-48 shrink-0">
+              <div className="w-32 h-32 md:w-48 md:h-48 shrink-0 overflow-hidden">
                 <img 
-                  src="https://res.cloudinary.com/dp9lnazkj/image/upload/f_webp/q_auto:best/farida-adigamova-hex-frame-color.png_ppvor8.png" 
+                  src="https://res.cloudinary.com/dp9lnazkj/image/upload/v1777155566/farida-hex-blue.png_caqlwr.png" 
                   alt="Farida Adigamova" 
-                  className="w-full h-full object-contain drop-shadow-lg"
+                  className="w-full h-full object-contain drop-shadow-lg transition-all duration-700 ease-out group-hover:scale-105 group-hover:contrast-125"
                 />
               </div>
               <div>
-                <h2 className="font-headline text-3xl font-bold text-[var(--color-on-surface)] mb-2">Farida Adigamova</h2>
+                <h2 className="font-headline text-3xl font-bold text-[var(--color-on-surface)] mb-2 whitespace-nowrap">Farida Adigamova</h2>
                 <h3 className="font-label text-xs uppercase tracking-[0.2em] text-[var(--color-tertiary)] font-bold mb-6">Co-Founder</h3>
                 <p className="font-body text-base text-[var(--color-outline)] leading-relaxed text-pretty">
-                  Delivering four decades of unparalleled accounting precision and tax advisory excellence.
+                  Delivering four decades of unparalleled accounting precision and tax advisory&nbsp;excellence.
                 </p>
               </div>
             </div>
@@ -108,8 +108,8 @@ export const Team = () => {
                 <div>
                   <h4 className="font-headline font-semibold text-[var(--color-on-surface)] mb-1">Experience</h4>
                   <p className="font-body text-sm text-[var(--color-outline)] leading-relaxed">
-                    40+ years in accounting & finance (since 1984). <br/>
-                    10 years of US-based non-CPA accounting & financial advisory practice (since 2016).
+                    40+ years in accounting & finance (since&nbsp;1984). <br/>
+                    10 years of US-based non-CPA accounting & financial advisory practice (since&nbsp;2016).
                   </p>
                 </div>
               </div>
@@ -120,7 +120,7 @@ export const Team = () => {
                   <h4 className="font-headline font-semibold text-[var(--color-on-surface)] mb-1">Education</h4>
                   <p className="font-body text-sm text-[var(--color-outline)] leading-relaxed">
                     M.S. in Accounting (Russia). <br/>
-                    US Accounting coursework at West Valley Occupational Center — Los Angeles, CA.
+                    US Accounting coursework at West Valley Occupational Center — Los Angeles,&nbsp;CA.
                   </p>
                 </div>
               </div>
@@ -130,8 +130,8 @@ export const Team = () => {
                 <div>
                   <h4 className="font-headline font-semibold text-[var(--color-on-surface)] mb-1">Authorizations & Certifications</h4>
                   <ul className="font-body text-sm text-[var(--color-outline)] leading-relaxed list-disc pl-4 space-y-1">
-                    <li>IRS Authorized ITIN Acceptance Agent (EA)</li>
-                    <li>QuickBooks Online Certified ProAdvisor</li>
+                    <li>IRS Authorized ITIN Acceptance Agent&nbsp;(EA)</li>
+                    <li>QuickBooks Online Certified&nbsp;ProAdvisor</li>
                   </ul>
                 </div>
               </div>

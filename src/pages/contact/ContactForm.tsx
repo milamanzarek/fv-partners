@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Phone, ArrowRight } from 'lucide-react';
+import { Phone, ArrowRight, Calendar } from 'lucide-react';
 import { submitContactForm } from '../../services/api';
 import { useI18n } from '../../context/I18nContext';
 
 interface FormErrors {
-  name?: string;
+  firstName?: string;
+  lastName?: string;
   email?: string;
   phone?: string;
-  company?: string;
-  city?: string;
-  state?: string;
   message?: string;
 }
 
@@ -19,12 +17,10 @@ export const ContactForm = () => {
   const { t } = useI18n();
 
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     phone: '',
-    company: '',
-    city: '',
-    state: '',
     message: '',
   });
   
@@ -34,14 +30,14 @@ export const ContactForm = () => {
 
   const validate = (): boolean => {
     const newErrors: FormErrors = {};
-    if (!formData.name.trim()) newErrors.name = 'Required';
+    if (!formData.firstName.trim()) newErrors.firstName = 'Required';
+    if (!formData.lastName.trim()) newErrors.lastName = 'Required';
     if (!formData.email.trim()) {
       newErrors.email = 'Required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Invalid email';
     }
     if (!formData.phone.trim()) newErrors.phone = 'Required';
-    if (!formData.company.trim()) newErrors.company = 'Required';
     if (!formData.message.trim()) newErrors.message = 'Required';
     
     setErrors(newErrors);
@@ -74,16 +70,29 @@ export const ContactForm = () => {
     <form className="space-y-6" onSubmit={handleSubmit} data-testid="contact-form">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="name" className={`block font-label text-[10px] uppercase tracking-[0.2em] font-bold mb-2 ${errors.name ? 'text-red-500' : 'text-outline'}`}>
-            {errors.name || t('Full name')}
+          <label htmlFor="firstName" className={`block font-label text-[10px] uppercase tracking-[0.2em] font-bold mb-2 ${errors.firstName ? 'text-red-500' : 'text-outline'}`}>
+            {errors.firstName || t('First Name')}
           </label>
           <input
             type="text"
-            id="name"
-            value={formData.name}
+            id="firstName"
+            value={formData.firstName}
             onChange={handleChange}
             disabled={isSubmitting}
-            className={`w-full bg-surface-tier-2 px-5 py-4 text-on-surface font-body text-base outline-none focus:ring-0 transition-colors placeholder:text-outline/50 shadow-inner border border-surface-variant ${errors.name ? 'border-red-500' : ''}`}
+            className={`w-full bg-surface-tier-2 px-5 py-4 text-on-surface font-body text-base outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors placeholder:text-outline/50 shadow-inner border border-outline ${errors.firstName ? 'border-red-500' : ''}`}
+          />
+        </div>
+        <div>
+          <label htmlFor="lastName" className={`block font-label text-[10px] uppercase tracking-[0.2em] font-bold mb-2 ${errors.lastName ? 'text-red-500' : 'text-outline'}`}>
+            {errors.lastName || t('Last Name')}
+          </label>
+          <input
+            type="text"
+            id="lastName"
+            value={formData.lastName}
+            onChange={handleChange}
+            disabled={isSubmitting}
+            className={`w-full bg-surface-tier-2 px-5 py-4 text-on-surface font-body text-base outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors placeholder:text-outline/50 shadow-inner border border-outline ${errors.lastName ? 'border-red-500' : ''}`}
           />
         </div>
         <div>
@@ -96,7 +105,7 @@ export const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             disabled={isSubmitting}
-            className={`w-full bg-surface-tier-2 px-5 py-4 text-on-surface font-body text-base outline-none focus:ring-0 transition-colors placeholder:text-outline/50 shadow-inner border border-surface-variant ${errors.email ? 'border-red-500' : ''}`}
+            className={`w-full bg-surface-tier-2 px-5 py-4 text-on-surface font-body text-base outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors placeholder:text-outline/50 shadow-inner border border-outline ${errors.email ? 'border-red-500' : ''}`}
           />
         </div>
         <div>
@@ -109,46 +118,7 @@ export const ContactForm = () => {
             value={formData.phone}
             onChange={handleChange}
             disabled={isSubmitting}
-            className={`w-full bg-surface-tier-2 px-5 py-4 text-on-surface font-body text-base outline-none focus:ring-0 transition-colors placeholder:text-outline/50 shadow-inner border border-surface-variant ${errors.phone ? 'border-red-500' : ''}`}
-          />
-        </div>
-        <div>
-          <label htmlFor="company" className={`block font-label text-[10px] uppercase tracking-[0.2em] font-bold mb-2 ${errors.company ? 'text-red-500' : 'text-outline'}`}>
-            {errors.company || t('Company name')}
-          </label>
-          <input
-            type="text"
-            id="company"
-            value={formData.company}
-            onChange={handleChange}
-            disabled={isSubmitting}
-            className={`w-full bg-surface-tier-2 px-5 py-4 text-on-surface font-body text-base outline-none focus:ring-0 transition-colors placeholder:text-outline/50 shadow-inner border border-surface-variant ${errors.company ? 'border-red-500' : ''}`}
-          />
-        </div>
-        <div>
-          <label htmlFor="city" className={`block font-label text-[10px] uppercase tracking-[0.2em] font-bold mb-2 ${errors.city ? 'text-red-500' : 'text-outline'}`}>
-            {errors.city || t('City')}
-          </label>
-          <input
-            type="text"
-            id="city"
-            value={formData.city}
-            onChange={handleChange}
-            disabled={isSubmitting}
-            className={`w-full bg-surface-tier-2 px-5 py-4 text-on-surface font-body text-base outline-none focus:ring-0 transition-colors placeholder:text-outline/50 shadow-inner border border-surface-variant ${errors.city ? 'border-red-500' : ''}`}
-          />
-        </div>
-        <div>
-          <label htmlFor="state" className={`block font-label text-[10px] uppercase tracking-[0.2em] font-bold mb-2 ${errors.state ? 'text-red-500' : 'text-outline'}`}>
-            {errors.state || t('State')}
-          </label>
-          <input
-            type="text"
-            id="state"
-            value={formData.state}
-            onChange={handleChange}
-            disabled={isSubmitting}
-            className={`w-full bg-surface-tier-2 px-5 py-4 text-on-surface font-body text-base outline-none focus:ring-0 transition-colors placeholder:text-outline/50 shadow-inner border border-surface-variant ${errors.state ? 'border-red-500' : ''}`}
+            className={`w-full bg-surface-tier-2 px-5 py-4 text-on-surface font-body text-base outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors placeholder:text-outline/50 shadow-inner border border-outline ${errors.phone ? 'border-red-500' : ''}`}
           />
         </div>
       </div>
@@ -163,7 +133,7 @@ export const ContactForm = () => {
           value={formData.message}
           onChange={handleChange}
           disabled={isSubmitting}
-          className={`w-full bg-surface-tier-2 px-5 py-4 text-on-surface font-body text-base outline-none focus:ring-0 transition-colors placeholder:text-outline/50 resize-y shadow-inner border border-surface-variant ${errors.message ? 'border-red-500' : ''}`}
+          className={`w-full bg-surface-tier-2 px-5 py-4 text-on-surface font-body text-base outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors placeholder:text-outline/50 resize-y shadow-inner border border-outline ${errors.message ? 'border-red-500' : ''}`}
         />
       </div>
       

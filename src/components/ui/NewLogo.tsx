@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
-import logoUrl from '../../assets/logo.png';
+// Using the provided mark-only full color from cloudinary
+const logoUrl = "https://res.cloudinary.com/dp9lnazkj/image/upload/f_webp/q_auto:best/mark-only-full-color_1_jv49yi.png";
 
 export const NewLogo = ({ className = "w-12 h-12" }: { className?: string }) => {
   return (

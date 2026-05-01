@@ -5,26 +5,26 @@ import { SEO } from '../../components/seo/SEO';
 export const Insights = () => {
   const articles = [
     {
-      category: "Capital Defense",
+      category: "Growth & Profitability",
       date: "Oct 24, 2025",
-      title: "Executing Aggressive Defenses in Volatile Markets",
-      excerpt: "An analytical examination of how strict quantitative modeling provides an uncompromising anchor during structural economic shifts.",
+      title: "Navigating US Tax Complexity: A Guide for Immigrant-Owned Businesses",
+      excerpt: "Overwhelmed by IRS compliance and intricate tax structures? Discover how proactive bookkeeping reclaims your time and protects your hard-earned revenue from unnecessary liabilities.",
       featured: true,
       image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80"
     },
     {
-      category: "Feature Value",
+      category: "Capital Readiness",
       date: "Oct 18, 2025",
-      title: "The Mathematics of Future Value",
-      excerpt: "Understanding the risk metrics of enterprise valuation and how it determines long-term fiscal outcomes.",
+      title: "Scaling Beyond the Plateau: When to Upgrade Your Financial Reporting",
+      excerpt: "If you are relying on basic cash-basis accounting, you are flying blind. Learn how accrual accounting and detailed margin analysis provide the clarity needed to scale confidently.",
       featured: false,
       image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80"
     },
     {
-      category: "Strategic Growth",
+      category: "Strategic Leadership",
       date: "Oct 12, 2025",
-      title: "Upstream Audit Methodologies",
-      excerpt: "Why executing the financial architecture before the transaction is the most critical metric in enterprise M&A.",
+      title: "The Strategic Advantage of Fractional Financial Leadership",
+      excerpt: "You do not need a full-time CFO to execute high-level strategy. See how a fractional CFO brings executive-level insight to optimize cash flow and prepare you for your next capital event.",
       featured: false,
       image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80"
     }
@@ -38,7 +38,7 @@ export const Insights = () => {
       initial={{ opacity: 0 }} 
       animate={{ opacity: 1 }} 
       exit={{ opacity: 0 }} 
-      className="min-h-screen bg-background text-on-background flex flex-col overflow-hidden pt-20 selection:bg-primary selection:text-on-primary"
+      className="bg-background text-on-background flex flex-col overflow-hidden pt-20 selection:bg-primary selection:text-on-primary"
     >
       <SEO 
         title="Insights & Perspectives" 
@@ -51,7 +51,7 @@ export const Insights = () => {
             Institutional <span className="italic text-tertiary">Directives</span>
           </h1>
           <nav className="flex flex-wrap items-center gap-3 pb-2 md:pb-0" aria-label="Article Categories">
-            {['All', 'Market Vectors', 'Capital Defense', 'Future Value'].map((tag, i) => (
+            {['All', 'Growth & Profitability', 'Capital Readiness', 'Strategic Leadership'].map((tag, i) => (
               <button 
                 key={i} 
                 className={`whitespace-nowrap px-5 py-2 cursor-pointer font-label text-[10px] uppercase tracking-[0.2em] transition-all duration-300 font-bold shadow-sm ${

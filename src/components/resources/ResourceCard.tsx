@@ -43,11 +43,11 @@ export const ResourceCard = ({ resource, index, onAction }: ResourceCardProps) =
         </div>
       </div>
 
-      <h3 className="text-xl font-headline font-semibold text-on-surface mb-2 group-hover:text-primary transition-colors leading-tight line-clamp-2 shrink-0">
+      <h3 className="text-xl font-headline font-semibold text-on-surface mb-2 group-hover:text-primary transition-colors leading-tight line-clamp-4 shrink-0">
         {resource.title}
       </h3>
       
-      <p className="text-outline font-body text-sm flex-grow mb-6 leading-relaxed line-clamp-2">
+      <p className="text-outline font-body text-sm flex-grow mb-6 leading-relaxed line-clamp-4">
         {resource.description}
       </p>
 

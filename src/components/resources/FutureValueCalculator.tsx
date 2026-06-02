@@ -32,10 +32,11 @@ export const FutureValueCalculator = () => {
       <div className="space-y-8 mb-10">
         <div>
           <div className="flex justify-between items-end mb-3 px-1">
-            <label className="text-outline font-label text-[10px] uppercase tracking-[0.2em] font-semibold">Initial Capital</label>
+            <label htmlFor="initial-capital" className="text-outline font-label text-[10px] uppercase tracking-[0.2em] font-semibold">Initial Capital</label>
             <span className="text-primary font-body font-bold text-lg">{formatCurrency(presentValue)}</span>
           </div>
           <input 
+            id="initial-capital"
             type="range" min="10000" max="1000000" step="10000" 
             value={presentValue} onChange={(e) => setPresentValue(Number(e.target.value))}
             className="w-full h-1.5 bg-background rounded-none appearance-none cursor-pointer accent-primary"
@@ -44,10 +45,11 @@ export const FutureValueCalculator = () => {
 
         <div>
           <div className="flex justify-between items-end mb-3 px-1">
-            <label className="text-outline font-label text-[10px] uppercase tracking-[0.2em] font-semibold">Annual Growth (%)</label>
+            <label htmlFor="annual-growth" className="text-outline font-label text-[10px] uppercase tracking-[0.2em] font-semibold">Annual Growth (%)</label>
             <span className="text-primary font-body font-bold text-lg">{interestRate}%</span>
           </div>
           <input 
+            id="annual-growth"
             type="range" min="1" max="25" step="0.5" 
             value={interestRate} onChange={(e) => setInterestRate(Number(e.target.value))}
             className="w-full h-1.5 bg-background rounded-none appearance-none cursor-pointer accent-primary"
@@ -56,10 +58,11 @@ export const FutureValueCalculator = () => {
 
         <div>
           <div className="flex justify-between items-end mb-3 px-1">
-            <label className="text-outline font-label text-[10px] uppercase tracking-[0.2em] font-semibold">Horizon (Years)</label>
+            <label htmlFor="horizon-years" className="text-outline font-label text-[10px] uppercase tracking-[0.2em] font-semibold">Horizon (Years)</label>
             <span className="text-primary font-body font-bold text-lg">{years} Years</span>
           </div>
           <input 
+            id="horizon-years"
             type="range" min="1" max="40" step="1" 
             value={years} onChange={(e) => setYears(Number(e.target.value))}
             className="w-full h-1.5 bg-background rounded-none appearance-none cursor-pointer accent-primary"
